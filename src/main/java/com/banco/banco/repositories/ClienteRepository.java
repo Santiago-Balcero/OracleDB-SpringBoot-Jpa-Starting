@@ -18,6 +18,4 @@ public interface ClienteRepository extends CrudRepository<ClienteModel, Long>{
     public abstract Optional<ClienteModel> findByIdCliente(Long idCliente);
 
     public abstract ArrayList<ClienteModel> findByCiudad(String ciudad);
-
-    public abstract boolean deleteByIdCliente(Long idCliente);
 }

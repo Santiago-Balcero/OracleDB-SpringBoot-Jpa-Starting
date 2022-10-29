@@ -21,6 +21,7 @@ public class ClienteService {
     }
 
     public ClienteModel guardarCliente(ClienteModel usuario) {
+        // Este método no está en ClienteRepository pues viene predefinido
         return clienteRepository.save(usuario);
     }
 
@@ -35,8 +36,11 @@ public class ClienteService {
 
     public boolean eliminarCliente(Long idCliente) {
         try {
-            return clienteRepository.deleteByIdCliente(idCliente);
+            // Este método no esté en ClienteRepository pues viene predefinido y retorna void
+            clienteRepository.deleteById(idCliente);
+            return true;
         } catch (Exception e) {
+            System.out.println("********************************************************************");
             e.printStackTrace();
             return false;
         }
